@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name            = "lynx-investor-financials"
-version         = "3.0"
+version         = "3.0.1"
 description     = "Lynx Information Technology — Fundamental analysis specialized for software, SaaS, semiconductors, cloud, cybersecurity & IT companies"
 readme          = "README.md"
 requires-python = ">=3.10"

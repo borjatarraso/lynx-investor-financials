@@ -457,9 +457,9 @@ class ReportView(VerticalScroll):
 # Main application
 # ======================================================================
 
-class LynxTechApp(PagingAppMixin, App):
-    TITLE = "Lynx Information Technology Analysis"
-    SUB_TITLE = "SaaS, Cloud, Cybersecurity & Semiconductors"
+class LynxFinanceApp(PagingAppMixin, App):
+    TITLE = "Lynx Financials Analysis"
+    SUB_TITLE = "Financials Fundamental Analysis"
     CSS = """
     #search-dialog {
         width: 60;
@@ -1951,5 +1951,5 @@ def _get_stage(r: AnalysisReport) -> CompanyStage:
 # ======================================================================
 
 def run_tui() -> None:
-    app = LynxTechApp()
+    app = LynxFinanceApp()
     app.run()
