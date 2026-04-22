@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name            = "lynx-investor-financials"
+version         = "3.0"
+description     = "Lynx Information Technology — Fundamental analysis specialized for software, SaaS, semiconductors, cloud, cybersecurity & IT companies"
+readme          = "README.md"
+requires-python = ">=3.10"
+license         = {text = "BSD-3-Clause"}
+authors         = [{name = "Borja Tarraso", email = "borja.tarraso@member.fsf.org"}]
+dependencies    = [
+    "yfinance>=0.2.40",
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+    "rich>=13.7",
+    "textual>=0.50",
+    "feedparser>=6.0",
+    "pandas>=2.1",
+    "numpy>=1.26",
+    "lynx-investor-core>=2.0",
+]
+
+[project.optional-dependencies]
+pdf = ["weasyprint>=60"]
+
+[project.scripts]
+lynx-finance = "lynx_finance.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["lynx_finance*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
