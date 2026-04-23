@@ -1,13 +1,13 @@
 """Lynx Financials — Fundamental analysis for banks, insurers, asset managers, capital markets & fintech companies."""
 
-__version__ = "4.0.1"
+__version__ = "5.0"
 __author__ = "Borja Tarraso"
 __author_email__ = "borja.tarraso@member.fsf.org"
 __year__ = "2026"
 __license__ = "BSD-3-Clause"
 
 SUITE_NAME = "Lince Investor Suite"
-SUITE_VERSION = "4.0"
+SUITE_VERSION = "5.0"
 SUITE_LABEL = f"{SUITE_NAME} v{SUITE_VERSION}"
 APP_NAME = "Lynx Financials Analysis"
 APP_TAGLINE = "Banks, Insurers, Asset Managers & Financial Services"
