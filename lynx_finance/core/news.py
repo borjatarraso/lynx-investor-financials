@@ -82,13 +82,16 @@ def fetch_all_news(ticker: str, company_name: Optional[str] = None) -> list[News
 
 
 def download_article(ticker: str, article: NewsArticle) -> Optional[str]:
+    from lynx_investor_core.urlsafe import is_safe_url
+    if not is_safe_url(article.url):
+        return None
     if not article.url:
         return None
     ndir = get_news_dir(ticker)
     safe_title = "".join(c if c.isalnum() or c in " -_" else "" for c in article.title)[:60].strip()
     path = ndir / f"{safe_title}.txt"
     try:
-        resp = requests.get(article.url, timeout=15, headers={"User-Agent": f"Mozilla/5.0 (compatible; {USER_AGENT_PRODUCT})"})
+        resp = requests.get(article.url, timeout=15, allow_redirects=False, headers={"User-Agent": f"Mozilla/5.0 (compatible; {USER_AGENT_PRODUCT})"})
         resp.raise_for_status()
         from bs4 import BeautifulSoup
         soup = BeautifulSoup(resp.text, "html.parser")
