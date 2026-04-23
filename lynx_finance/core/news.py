@@ -1,4 +1,4 @@
-"""News fetching for Information Technology companies."""
+"""News fetching for Financials companies."""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ import feedparser
 import requests
 import yfinance as yf
 
+from lynx_finance import NEWS_SECTOR_KEYWORD, USER_AGENT_PRODUCT
 from lynx_finance.core.storage import get_news_dir, save_json, save_text
 from lynx_finance.models import NewsArticle
 
@@ -45,7 +46,7 @@ def fetch_news_yfinance(ticker: str) -> list[NewsArticle]:
 
 
 def fetch_news_rss(company_name: str, ticker: str) -> list[NewsArticle]:
-    query = f"{company_name} {ticker} tech stock"
+    query = f"{company_name} {ticker} {NEWS_SECTOR_KEYWORD}"
     feed_url = f"https://news.google.com/rss/search?q={query.replace(' ', '+')}&hl=en&gl=US&ceid=US:en"
     articles: list[NewsArticle] = []
     try:
@@ -87,7 +88,7 @@ def download_article(ticker: str, article: NewsArticle) -> Optional[str]:
     safe_title = "".join(c if c.isalnum() or c in " -_" else "" for c in article.title)[:60].strip()
     path = ndir / f"{safe_title}.txt"
     try:
-        resp = requests.get(article.url, timeout=15, headers={"User-Agent": "Mozilla/5.0 (compatible; LynxTech/0.1)"})
+        resp = requests.get(article.url, timeout=15, headers={"User-Agent": f"Mozilla/5.0 (compatible; {USER_AGENT_PRODUCT})"})
         resp.raise_for_status()
         from bs4 import BeautifulSoup
         soup = BeautifulSoup(resp.text, "html.parser")

@@ -72,7 +72,7 @@ Show Version
     When I Run Version
     Then The Exit Code Should Be 0
     Then The Output Should Contain "lynx-finance"
-    Then The Output Should Contain "3.0"
+    Then The Output Should Contain "4.0"
 
 Show About
     [Documentation]    GIVEN the app WHEN I run about THEN it shows author and license

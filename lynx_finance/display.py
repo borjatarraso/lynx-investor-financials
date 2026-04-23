@@ -1,4 +1,4 @@
-"""Rich console display for Information Technology analysis reports — stage and tier aware.
+"""Rich console display for Financials analysis reports — stage and tier aware.
 
 All metric sections use the 5-level relevance system driven by get_relevance()
 with BOTH tier AND IT lifecycle stage parameters:
@@ -1299,7 +1299,7 @@ def _display_header(report):
         header.append(f"  ISIN: {p.isin}", style="dim on blue")
     console.print(Panel(
         header,
-        title="[bold]LYNX Information Technology Analysis[/]",
+        title="[bold]LYNX Financials Analysis[/]",
         border_style="blue",
     ))
     tc = _tier_color(p.tier)

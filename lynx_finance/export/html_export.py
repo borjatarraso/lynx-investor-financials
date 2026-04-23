@@ -663,7 +663,7 @@ Jurisdiction: {esc(_ev(p.jurisdiction_tier))}
     # --- Footer ---
     parts.append(f"""
 <div class="footer">
-  Lynx Information Technology Analysis &mdash; Lince Investor Suite<br>
+  Lynx Financials Analysis &mdash; Lince Investor Suite<br>
   Report generated: {esc(report.fetched_at)}<br>
   This report is for informational purposes only and does not constitute investment advice.
 </div>

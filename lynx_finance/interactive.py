@@ -21,7 +21,7 @@ from lynx_finance.models import AnalysisReport
 
 console = Console()
 
-BANNER = "\n[bold blue]  L Y N X   Information Technology Analysis[/]\n[dim]    SaaS, Software, Cloud, Cybersecurity, Semiconductors & IT[/]\n"
+BANNER = "\n[bold blue]  L Y N X   Financials Analysis[/]\n[dim]    Banks, Insurers, Asset Managers & Financial Services[/]\n"
 
 MENU = """
 [bold cyan]Analysis:[/]
@@ -126,7 +126,7 @@ def run_interactive():
                     console.print(Panel(
                         f"[bold blink red]SECTOR MISMATCH — ANALYSIS BLOCKED[/]\n\n"
                         f"[bold red]{e}[/]\n\n"
-                        f"[bold blink red]This tool is specialized ONLY for Information Technology.[/]",
+                        f"[bold blink red]This tool is specialized ONLY for Financials.[/]",
                         title="[bold blink red]!! WRONG SECTOR !![/]",
                         border_style="bold red", padding=(1, 3),
                     ))
@@ -225,7 +225,7 @@ def run_interactive():
                 if 0 <= idx < len(current_report.news):
                     art = current_report.news[idx]
                     if art.url:
-                        import webbrowser; webbrowser.open(art.url)
+                        from lynx_investor_core.urlsafe import safe_webbrowser_open; _ok = safe_webbrowser_open(art.url)
                         console.print(f"[green]Opened in browser:[/] {art.title[:60]}")
                     else:
                         console.print("[red]No URL available.[/]")

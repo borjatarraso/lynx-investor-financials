@@ -1,4 +1,4 @@
-"""Textual UI for Lynx Information Technology Analysis."""
+"""Textual UI for Lynx Financials Analysis."""
 
 from __future__ import annotations
 
@@ -661,7 +661,7 @@ class LynxFinanceApp(PagingAppMixin, App):
         from lynx_finance.tui.themes import register_all_themes, THEME_NAMES
         try:
             register_all_themes(self)
-            self.theme = THEME_NAMES[0]  # tech-dark
+            self.theme = THEME_NAMES[0]  # finance-dark (first custom theme)
         except Exception:
             pass  # Fall back to Textual's default theme
 
@@ -669,7 +669,7 @@ class LynxFinanceApp(PagingAppMixin, App):
         yield Header()
         yield Static(
             "[bold blue]  lynx-finance  [/]\n\n"
-            "[bold]Information Technology Analysis Tool[/]\n"
+            "[bold]Financials Analysis Tool[/]\n"
             "[dim]Press [bold]A[/bold] to analyze a stock, "
             "[bold]Q[/bold] to quit[/]\n\n"
             "[dim]Navigation: click section headers to expand/collapse  "
@@ -898,8 +898,8 @@ class LynxFinanceApp(PagingAppMixin, App):
                     self._set_status,
                     f"[bold blink red]!! SECTOR MISMATCH — ANALYSIS BLOCKED !![/]\n\n"
                     f"[bold red]{e}[/]\n\n"
-                    f"[bold blink red]This tool is specialized ONLY for Information Technology:[/]\n"
-                    f"[red]SaaS | Cloud | Cybersecurity | Semiconductors | Software | Platforms[/]\n\n"
+                    f"[bold blink red]This tool is specialized ONLY for Financials:[/]\n"
+                    f"[red]Banks | Insurance | Asset Managers | Capital Markets | Credit | Exchanges | Mortgage Finance[/]\n\n"
                     f"[dim]Press A to analyze a different stock[/]",
                 )
             else:

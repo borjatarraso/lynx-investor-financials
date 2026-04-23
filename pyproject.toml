@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name            = "lynx-investor-financials"
-version         = "3.0.2"
-description     = "Lynx Information Technology — Fundamental analysis specialized for software, SaaS, semiconductors, cloud, cybersecurity & IT companies"
+version = "4.0"
+description     = "Lynx Financials — Fundamental analysis specialized for banks, insurers, asset managers, capital markets, and financial services"
 readme          = "README.md"
 requires-python = ">=3.10"
 license         = {text = "BSD-3-Clause"}
@@ -19,7 +19,7 @@ dependencies    = [
     "feedparser>=6.0",
     "pandas>=2.1",
     "numpy>=1.26",
-    "lynx-investor-core>=2.0",
+    "lynx-investor-core>=4.0",
 ]
 
 [project.optional-dependencies]

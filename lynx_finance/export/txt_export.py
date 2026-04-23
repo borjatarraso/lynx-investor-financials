@@ -125,7 +125,7 @@ def export_txt(report: AnalysisReport, output_path: Path) -> Path:
     def _ev(val):
         return val.value if hasattr(val, "value") else str(val) if val else "N/A"
 
-    lines += _header(f"LYNX Information Technology  --  {p.name} ({p.ticker})")
+    lines += _header(f"LYNX Financials  --  {p.name} ({p.ticker})")
     lines.append(f"  Tier: {_ev(p.tier)}  |  Stage: {_ev(p.stage)}")
     lines.append(f"  Tech Category: {_ev(p.finance_category)}  |  Jurisdiction: {_ev(p.jurisdiction_tier)}")
     if p.jurisdiction_country:
@@ -563,7 +563,7 @@ def export_txt(report: AnalysisReport, output_path: Path) -> Path:
     lines.append("")
     lines += _header("END OF REPORT")
     lines.append(f"  Generated: {report.fetched_at}")
-    lines.append(f"  Lynx Information Technology (Lince Investor Suite)")
+    lines.append(f"  Lynx Financials (Lince Investor Suite)")
     lines.append("=" * W)
 
     output_path.write_text("\n".join(lines), encoding="utf-8")

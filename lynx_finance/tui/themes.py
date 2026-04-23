@@ -10,7 +10,7 @@ if TYPE_CHECKING:
     from textual.app import App
 
 LYNX_DARK = Theme(
-    name="tech-dark",
+    name="finance-dark",
     primary="#89b4fa",
     secondary="#a6adc8",
     accent="#f9e2af",
@@ -70,7 +70,7 @@ SOLARIZED = Theme(
 )
 
 LYNX_LIGHT = Theme(
-    name="tech-light",
+    name="finance-light",
     primary="#1e66f5",
     secondary="#6c6f85",
     accent="#df8e1d",
@@ -104,7 +104,7 @@ CYBRDOTS = Theme(
 CUSTOM_THEMES: list[Theme] = [LYNX_DARK, HACKER, DRACULA, SOLARIZED, CYBRDOTS, LYNX_LIGHT]
 
 THEME_NAMES: list[str] = [
-    "tech-dark", "hacker", "dracula", "solarized", "cybrdots", "tech-light",
+    "finance-dark", "hacker", "dracula", "solarized", "cybrdots", "finance-light",
     "textual-dark", "textual-light",
 ]
 

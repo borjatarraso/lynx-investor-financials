@@ -12,7 +12,7 @@ LYNX_ASCII = """
     |  .  /  [/][bold yellow]o[/][bold green]     [/][bold yellow]o[/][bold green]  \\  .  |
     |  . |     v     |  .  |
      \\./  --\\ _ /--  \\. /      [/][bold white]L Y N X[/]
-[bold green]      | |  --/ V \\--   |  |      [/][dim]Information Technology Analysis[/]
+[bold green]      | |  --/ V \\--   |  |      [/][dim]Financials Analysis[/]
 [bold green]       \\ \\    ___    / /
         \\ \\---------/ /
          \\___________/[/]
@@ -41,12 +41,11 @@ BULL_ASCII = r"""
 
 CHIP_ASCII = r"""
 [bold cyan]
-    __________________
-   |  __  __  __  __  |
-   | |##||##||##||##| |
-   | |##||##||##||##| |  [bold white]S I L I C O N[/bold white]
-   | |##||##||##||##| |  [dim]Tech Stock Research[/dim]
-   |_+_____________+_|
+    _________________________
+   |  [=]  [=]  [=]  [=]  |
+   |  FINANCIAL LEDGER     |
+   |  ACCRUAL . CAPITAL    |
+   |_______________________|  [dim]Financials Stock Research[/dim]
 [/bold cyan]
 """
 PICKAXE_ASCII = CHIP_ASCII  # backwards-compat alias
@@ -67,11 +66,11 @@ FORTUNE_QUOTES = [
     '"Never invest in a business you cannot understand." \u2014 Warren Buffett',
     '"Time in the market beats timing the market." \u2014 Kenneth Fisher',
     '"The best time to buy is when there is blood in the streets." \u2014 Baron Rothschild',
-    '"Software is eating the world." \u2014 Marc Andreessen',
-    '"In tech, the best returns go to the highest-quality compounders, not the cheapest." \u2014 Bessemer Venture Partners',
-    '"If you\u2019re not paying for the product, you are the product." \u2014 internet proverb',
-    '"Great tech companies are built on gross margin." \u2014 David Skok',
-    '"Rule of 40: a lazy metric that somehow keeps working." \u2014 Jamin Ball',
+    '"Banking is necessary; banks are not." \u2014 Bill Gates',
+    '"In the end, you always have to discount for reality." \u2014 Charlie Munger',
+    '"Return on equity > 15%, consistent for 10 years, is a finance moat."',
+    '"The four most dangerous words in investing: \u2018this time it\u2019s different.\u2019" \u2014 John Templeton',
+    '"Price is what you pay; value is what you get." \u2014 Warren Buffett',
 ]
 
 ROCKET_ASCII = r"""
@@ -191,7 +190,7 @@ def tk_fireworks(root) -> None:
             alive.append((tid, dx * 0.96, dy, age + 1))
         particles = alive
         if step[0] == 1:
-            for i, msg in enumerate(["\u2605  lynx-finance  \u2605", "Information Technology Analysis", "\U0001f680 To the Moon! \U0001f680"]):
+            for i, msg in enumerate(["\u2605  lynx-finance  \u2605", "Financials Analysis", "\U0001f680 To the Moon! \U0001f680"]):
                 canvas.create_text(root.winfo_width() // 2, 40 + i * 36, text=msg,
                                    fill=BANNER_COLORS[i % len(BANNER_COLORS)],
                                    font=("Noto Sans", 20 - i * 3, "bold"), tags="banner_text")

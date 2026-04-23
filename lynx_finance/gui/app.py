@@ -1,4 +1,4 @@
-"""Tkinter graphical user interface for Lynx Information Technology Analysis."""
+"""Tkinter graphical user interface for Lynx Financials Analysis."""
 
 from __future__ import annotations
 
@@ -157,14 +157,14 @@ class SplashScreen:
 
         # Subtitle
         self.subtitle = tk.Label(
-            center, text="Information Technology Analysis", font=FONT_SPLASH_SUB,
+            center, text="Financials Analysis", font=FONT_SPLASH_SUB,
             bg=BG, fg=ACCENT,
         )
         self.subtitle.pack(pady=(0, 20))
 
         # Tagline
         self.tagline = tk.Label(
-            center, text="SaaS  |  Cloud  |  Cybersecurity  |  Semiconductors", font=FONT_SMALL,
+            center, text="Banks  |  Insurers  |  Asset Managers  |  Capital Markets", font=FONT_SMALL,
             bg=BG, fg=FG_DIM,
         )
         self.tagline.pack(pady=(0, 30))
@@ -302,8 +302,8 @@ class CollapsibleCard:
 # Main application
 # ---------------------------------------------------------------------------
 
-class LynxTechGUI:
-    """Tkinter GUI application for Lynx Information Technology Analysis."""
+class LynxFinanceGUI:
+    """Tkinter GUI application for Lynx Financials Analysis."""
 
     def __init__(self, cli_args) -> None:
         self.cli_args = cli_args
@@ -312,7 +312,7 @@ class LynxTechGUI:
         self._suppress_news_dialog: bool = False
 
         self.root = tk.Tk()
-        self.root.title("Lynx Information Technology Analysis")
+        self.root.title("Lynx Financials Analysis")
         self.root.configure(bg=BG)
         self.root.geometry("1150x900")
         self.root.minsize(960, 640)
@@ -361,7 +361,7 @@ class LynxTechGUI:
                 pass
 
         tk.Label(
-            brand, text="Lynx Information Technology", font=(_FAMILY, 14, "bold"),
+            brand, text="Lynx Financials", font=(_FAMILY, 14, "bold"),
             bg=BG_SURFACE, fg=ACCENT,
         ).pack(side=tk.LEFT)
 
@@ -1170,8 +1170,8 @@ class LynxTechGUI:
             win,
             text=(
                 "This tool is specialized ONLY for:\n"
-                "Information Technology  |  SaaS  |  Cloud  |  Cybersecurity\n"
-                "Semiconductors  |  Software  |  Internet  |  Platforms"
+                "Financials  |  Banks  |  Insurance  |  Asset Managers\n"
+                "Capital Markets  |  Credit  |  Exchanges  |  Mortgage Finance"
             ),
             font=(_FAMILY, 11, "bold"),
             bg="#3a0a0a", fg="#ff8888", justify=tk.CENTER,
@@ -2838,5 +2838,5 @@ def _assessment_color(text: str) -> str:
 
 def run_gui(args) -> None:
     """Launch the tkinter GUI."""
-    app = LynxTechGUI(cli_args=args)
+    app = LynxFinanceGUI(cli_args=args)
     app.run()

@@ -99,8 +99,7 @@ def _validate_sector(profile: CompanyProfile) -> None:
         f"  - Asset & Wealth Management, Capital Markets Infrastructure\n"
         f"  - Consumer Finance, Mortgage Finance, Mortgage REITs\n"
         f"  - Fintech, Payments & Neobanks\n\n"
-        f"For other sectors, use the matching Lynx specialist "
-        f"(Information Technology, Basic Materials, Energy, Healthcare, etc.)."
+        f"For other sectors, use the matching Lynx specialist for that sector."
     )
     message += format_agent_suggestion(
         profile, current_agent="lynx-investor-financials",

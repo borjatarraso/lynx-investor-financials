@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Lynx Information Technology Analysis — entry point.
+Lynx Financials Analysis — entry point.
 Run directly:   python3 lynx-investor-financials.py [args]
 Or via pip:     lynx-finance [args]
 """

@@ -8,11 +8,12 @@ from typing import Optional
 import requests
 import yfinance as yf
 
+from lynx_finance import USER_AGENT_PRODUCT
 from lynx_finance.core.storage import get_reports_dir, save_binary, save_json, save_text
 from lynx_finance.models import Filing
 
-DOWNLOAD_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; LynxTech/0.1)", "Accept-Encoding": "gzip, deflate"}
-EDGAR_HEADERS = {"User-Agent": "LynxTech/0.1 lynx-finance-research@example.com", "Accept-Encoding": "gzip, deflate"}
+DOWNLOAD_HEADERS = {"User-Agent": f"Mozilla/5.0 (compatible; {USER_AGENT_PRODUCT})", "Accept-Encoding": "gzip, deflate"}
+EDGAR_HEADERS = {"User-Agent": f"{USER_AGENT_PRODUCT} lynx-finance-research@example.com", "Accept-Encoding": "gzip, deflate"}
 EDGAR_BASE = "https://data.sec.gov"
 TARGET_FORMS = {"10-K", "10-Q", "20-F", "6-K", "8-K", "10-K/A", "10-Q/A"}
 
