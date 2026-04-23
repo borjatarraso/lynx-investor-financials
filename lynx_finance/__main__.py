@@ -1,3 +1,4 @@
+# PYTHON_ARGCOMPLETE_OK
 """Entry point for lynx-finance."""
 
 from lynx_finance.cli import run_cli

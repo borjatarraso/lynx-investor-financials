@@ -4,12 +4,26 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name            = "lynx-investor-financials"
-version = "5.1"
+version = "5.2"
 description     = "Lynx Financials — Fundamental analysis specialized for banks, insurers, asset managers, capital markets, and financial services"
 readme          = "README.md"
 requires-python = ">=3.10"
 license         = {text = "BSD-3-Clause"}
 authors         = [{name = "Borja Tarraso", email = "borja.tarraso@member.fsf.org"}]
+keywords        = ["finance", "investing", "fundamental-analysis", "financials", "banks", "insurance"]
+classifiers     = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
 dependencies    = [
     "yfinance>=0.2.40",
     "requests>=2.31",
@@ -19,11 +33,18 @@ dependencies    = [
     "feedparser>=6.0",
     "pandas>=2.1",
     "numpy>=1.26",
-    "lynx-investor-core>=5.1",
+    "lynx-investor-core>=5.2",
+    "argcomplete>=3.0",
 ]
 
 [project.optional-dependencies]
 pdf = ["weasyprint>=60"]
+
+[project.urls]
+Homepage   = "https://github.com/borjatarraso/lynx-investor-financials"
+Repository = "https://github.com/borjatarraso/lynx-investor-financials"
+Issues     = "https://github.com/borjatarraso/lynx-investor-financials/issues"
+Changelog  = "https://github.com/borjatarraso/lynx-investor-financials/blob/main/CHANGELOG.md"
 
 [project.scripts]
 lynx-finance = "lynx_finance.__main__:main"
