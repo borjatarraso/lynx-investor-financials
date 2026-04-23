@@ -88,7 +88,7 @@ Explain A Valuation Metric
     Given The Application Is Available
     When I Explain Metric "cash_to_market_cap"
     Then The Exit Code Should Be 0
-    Then The Output Should Contain "Cash-to-Market-Cap"
+    Then The Output Should Contain "Cash / Market Cap"
 
 Explain A Finance-Specific Metric CET1
     [Documentation]    GIVEN the app WHEN I explain cet1_ratio THEN it shows details

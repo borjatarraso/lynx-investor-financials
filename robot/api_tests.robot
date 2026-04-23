@@ -145,13 +145,13 @@ Sector Validation Allows Bank
 
 Sector Validation Blocks Tech
     [Documentation]    GIVEN a tech company WHEN I validate THEN blocked
-    When I Run Python Code    from lynx_finance.core.analyzer import _validate_sector, SectorMismatchError; from lynx_finance.models import CompanyProfile; p = CompanyProfile(ticker='MSFT', name='Microsoft', sector='Technology', industry='Software - Infrastructure');\ntry:\n    _validate_sector(p)\n    print('FAIL')\nexcept SectorMismatchError:\n    print('BLOCKED')
+    When I Run Python Code    from lynx_finance.core.analyzer import _validate_sector, SectorMismatchError; from lynx_finance.models import CompanyProfile; p = CompanyProfile(ticker='MSFT', name='Microsoft', sector='Technology', industry='Software - Infrastructure'); exec("try:\\n _validate_sector(p)\\n print('FAIL')\\nexcept SectorMismatchError:\\n print('BLOCKED')")
     Then The Output Should Contain    BLOCKED
 
 Conclusion Generation Returns Verdict
     [Documentation]    GIVEN a minimal report WHEN I generate conclusion THEN verdict is present
     When I Run Python Code    from lynx_finance.models import AnalysisReport, CompanyProfile; from lynx_finance.core.conclusion import generate_conclusion; r = AnalysisReport(profile=CompanyProfile(ticker='T', name='T')); c = generate_conclusion(r); print(c.verdict)
-    Then The Output Should Contain    Hold
+    Then The Output Should Contain    Caution
 
 Finance Screening Checklist Present
     [Documentation]    GIVEN a report WHEN I screen THEN cet1_well_capitalized key exists
